@@ -1,49 +1,51 @@
-# Streamlit Component template in Vue.js
+# Sketch Labeling Tool
+## Streamlit Custom Component built in Vue JS
 
-Vue 3 template to build a Streamlit component. Uses Vue.js scoped slot to send parameters from Streamlit Python script into `args` props of your component.
+![Demo](.\streamlit_sketch_rnn_labeling_tool\data\demo.gif)
+
+This is a sketch tool similar to *Quick, Draw!*, but specifically designed to label data to be used by sequential models like Sketch-RNN
+
+The Tool tracks the following attributes:<br>
+| attributes | Description                                |
+|------------|--------------------------------------------|
+| x          | offset along X-axis                        |
+| y          | Offset along Y-axis                        |
+| p1         | 1 if the pen is touching the Canvas else 0 |
+| p2         | 1 if the pen lifts from the Canvas else 0  |
+| p3         | 1 when the drawing is finished else 0      |
 
 ## Setup
 
-[Copy paste](https://github.com/streamlit/component-template#quickstart) of the original component-template quickstart.
-
 - Ensure you have [Python 3.6+](https://www.python.org/downloads/), [Node.js](https://nodejs.org), and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed.
-- Clone this repo.
 - Create a new Python virtual environment for the template:
 
+### Venv
 ```
 $ python3 -m venv venv  # create venv
 $ . venv/bin/activate   # activate venv
 $ pip install streamlit # install streamlit
 ```
 
-- Initialize and run the component template frontend:
+### Conda
 
 ```
-$ cd my_component/frontend
+$ conda create -n streamlit-sketch-rnn-labeling-tool python=3.6 anaconda
+$ conda activate streamlit-sketch-rnn-labeling-tool
+$ pip install streamlit # install streamlit
+```
+
+- Clone the repository, Initialize and run the component template frontend:
+
+```
+$ git clone https://github.com/wingedrasengan927/streamlit-sketch-rnn-labelling-tool.git
+$ cd streamlit-sketch-rnn-labelling-tool
+$ cd streamlit_sketch_rnn_labeling_tool/frontend
 $ npm install    # Install npm dependencies
 $ npm run serve  # Start the Webpack dev server
 ```
 
-- From a separate terminal, run the template's Streamlit app:
+- From a separate terminal, assuming you've activated the newly created virtual environment, run the template's Streamlit app from the `streamlit-sketch-rnn-labeling-tool` directory:
 
 ```
-$ . venv/bin/activate  # activate the venv you created earlier
-$ streamlit run my_component/__init__.py  # run the example
+$ streamlit run app.py
 ```
-
-- If all goes well, you should see something like this:
-  ![Quickstart Success](quickstart.png)
-- Modify the frontend code at `my_component/frontend/src/MyComponent.vue`.
-  - Parameters passed by Python script are made available in `args` props.
-- Modify the Python code at `my_component/__init__.py`.
-- Feel free to rename the `my_component` folder, `MyComponent.vue` file with its import in `App.vue`, and package name in `setup.py` and `package.json`.
-
-## Resources
-
-- [Higher Order Components in Vue.js](https://medium.com/bethink-pl/higher-order-components-in-vue-js-a79951ac9176)
-- [Do we need Higher Order Components in Vue.js?](https://medium.com/bethink-pl/do-we-need-higher-order-components-in-vue-js-87c0aa608f48)
-- [Build better higher-order components with Vue 3](https://blog.logrocket.com/build-better-higher-order-components-with-vue-3/)
-- [Scoped slots](https://v3.vuejs.org/guide/component-slots.html#scoped-slots)
-- [Using Slots in Vue.js](https://www.smashingmagazine.com/2019/07/using-slots-vue-js/)
-- [Single File Components](https://v3.vuejs.org/guide/single-file-component.html)
-- [SFC Spec](https://vue-loader.vuejs.org/spec.html)
