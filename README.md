@@ -1,7 +1,7 @@
 # Sketch Labeling Tool
 ## Streamlit Custom Component built in Vue JS
 
-![Demo](.\streamlit_sketch_rnn_labeling_tool\data\demo.gif)
+![Demo](https://github.com/wingedrasengan927/streamlit-sketch-rnn-labelling-tool/blob/vue3/streamlit_sketch_rnn_labeling_tool/data/demo.gif)
 
 This is a sketch tool similar to *Quick, Draw!*, but specifically designed to label data to be used by sequential models like Sketch-RNN
 
